@@ -1,9 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Living with the Ghost of Sam</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Living with the Ghost of Sam</title>
+    <meta name="description" content="Living with the Ghost of Sam - A supernatural comedy series">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Add font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <h1>Coming Soon</h1>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="scripts.html" class="nav-link">Scripts</a></li>
+            <li class="nav-item"><a href="character-bible.html" class="nav-link">Character Bible</a></li>
+            <li class="nav-item"><a href="about-writer.html" class="nav-link">About the Writer</a></li>
+            <li class="nav-item"><a href="sams-corner.html" class="nav-link">Sam's Corner</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="page-background">
+        <div class="overlay"></div>
+        
+        <div class="content-container">
+            <h1 class="pulsing-text">I am a .......</h1>
+            
+            <div class="role-selection">
+                <a href="roles/professional-agent.html" class="btn role-btn">Professional Agent</a>
+                <a href="roles/agency.html" class="btn role-btn">Agency</a>
+                <a href="roles/streaming-service.html" class="btn role-btn">Netflix-Amazon Prime-Disney+ or other</a>
+                <a href="roles/actor.html" class="btn role-btn">Actor Looking for a Script</a>
+                <a href="roles/producer.html" class="btn role-btn">Wealthy Producer</a>
+                <a href="index.html" class="btn role-btn">None of the above</a>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="current-year">2024</span> Living with the Ghost of Sam. All rights reserved.</p>
+    </footer>
+    
+    <!-- Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/navigation.js"></script>
 </body>
 </html>
