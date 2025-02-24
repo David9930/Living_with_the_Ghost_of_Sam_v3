@@ -1,1 +1,204 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Living with the Ghost of Sam</title>
+    <meta name="description" content="Contact the team behind Living with the Ghost of Sam">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Add font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="scripts.html" class="nav-link">Scripts</a></li>
+            <li class="nav-item"><a href="character-bible.html" class="nav-link">Character Bible</a></li>
+            <li class="nav-item"><a href="about-writer.html" class="nav-link">About the Writer</a></li>
+            <li class="nav-item"><a href="sams-corner.html" class="nav-link">Sam's Corner</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="page-background">
+        <div class="overlay"></div>
+        
+        <div class="content-container">
+            <h1>Contact Us</h1>
+            
+            <div class="box" style="max-width: 600px; margin: 0 auto;">
+                <form id="contact-form">
+                    <div id="form-status" style="display: none; margin-bottom: 2rem; padding: 1rem; border-radius: 4px;"></div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="name" style="display: block; color: #fff; margin-bottom: 0.5rem; font-size: 1.1rem;">Name</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required
+                            style="
+                                width: 100%;
+                                padding: 0.75rem;
+                                background-color: rgba(255, 255, 255, 0.1);
+                                border: 1px solid rgba(255, 255, 255, 0.2);
+                                border-radius: 4px;
+                                color: #fff;
+                                font-size: 1rem;
+                            "
+                        >
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="email" style="display: block; color: #fff; margin-bottom: 0.5rem; font-size: 1.1rem;">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required
+                            style="
+                                width: 100%;
+                                padding: 0.75rem;
+                                background-color: rgba(255, 255, 255, 0.1);
+                                border: 1px solid rgba(255, 255, 255, 0.2);
+                                border-radius: 4px;
+                                color: #fff;
+                                font-size: 1rem;
+                            "
+                        >
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="subject" style="display: block; color: #fff; margin-bottom: 0.5rem; font-size: 1.1rem;">Subject</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            required
+                            style="
+                                width: 100%;
+                                padding: 0.75rem;
+                                background-color: rgba(255, 255, 255, 0.1);
+                                border: 1px solid rgba(255, 255, 255, 0.2);
+                                border-radius: 4px;
+                                color: #fff;
+                                font-size: 1rem;
+                            "
+                        >
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <label for="message" style="display: block; color: #fff; margin-bottom: 0.5rem; font-size: 1.1rem;">Message</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            required
+                            rows="6"
+                            style="
+                                width: 100%;
+                                padding: 0.75rem;
+                                background-color: rgba(255, 255, 255, 0.1);
+                                border: 1px solid rgba(255, 255, 255, 0.2);
+                                border-radius: 4px;
+                                color: #fff;
+                                font-size: 1rem;
+                                resize: vertical;
+                            "
+                        ></textarea>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <button 
+                            type="submit"
+                            class="btn btn-blue"
+                        >
+                            <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i> Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="box" style="max-width: 600px; margin: 2rem auto 0;">
+                <h2 style="margin-bottom: 1.5rem;">Contact Information</h2>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Get in Touch</h3>
+                        
+                        <ul style="list-style-type: none; padding: 0;">
+                            <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                                <i class="fas fa-envelope" style="width: 1.5rem; color: #FFC107; margin-right: 0.5rem;"></i>
+                                <a href="mailto:info@livingwiththeghost.com" style="color: #fff; text-decoration: none;">info@livingwiththeghost.com</a>
+                            </li>
+                            <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                                <i class="fas fa-phone" style="width: 1.5rem; color: #FFC107; margin-right: 0.5rem;"></i>
+                                <span>(123) 456-7890</span>
+                            </li>
+                            <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                                <i class="fas fa-map-marker-alt" style="width: 1.5rem; color: #FFC107; margin-right: 0.5rem;"></i>
+                                <span>123 Ghost Lane, Apparition City</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 250px;">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Social Media</h3>
+                        
+                        <ul style="list-style-type: none; padding: 0;">
+                            <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                                <i class="fab fa-twitter" style="width: 1.5rem; color: #FFC107; margin-right: 0.5rem;"></i>
+                                <a href="#" style="color: #fff; text-decoration: none;">@GhostOfSamShow</a>
+                            </li>
+                            <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                                <i class="fab fa-instagram" style="width: 1.5rem; color: #FFC107; margin-right: 0.5rem;"></i>
+                                <a href="#" style="color: #fff; text-decoration: none;">@livingwiththeghost</a>
+                            </li>
+                            <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                                <i class="fab fa-facebook" style="width: 1.5rem; color: #FFC107; margin-right: 0.5rem;"></i>
+                                <a href="#" style="color: #fff; text-decoration: none;">LivingWithTheGhostOfSam</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="current-year">2024</span> Living with the Ghost of Sam. All rights reserved.</p>
+    </footer>
+    
+    <!-- Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, you would send the form data to a server
+            // For demo purposes, just show a success message
+            const formStatus = document.getElementById('form-status');
+            formStatus.textContent = "Thank you for your message! We'll get back to you soon.";
+            formStatus.style.display = "block";
+            formStatus.style.backgroundColor = "rgba(34, 197, 94, 0.2)";
+            formStatus.style.border = "1px solid #22c55e";
+            formStatus.style.color = "#22c55e";
+            
+            // Reset form
+            this.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(function() {
+                formStatus.style.display = "none";
+            }, 5000);
+        });
+    </script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>
