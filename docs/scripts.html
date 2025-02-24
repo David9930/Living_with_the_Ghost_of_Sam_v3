@@ -1,1 +1,209 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripts | Living with the Ghost of Sam</title>
+    <meta name="description" content="Browse and download scripts for Living with the Ghost of Sam series">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Add font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="scripts.html" class="nav-link">Scripts</a></li>
+            <li class="nav-item"><a href="character-bible.html" class="nav-link">Character Bible</a></li>
+            <li class="nav-item"><a href="about-writer.html" class="nav-link">About the Writer</a></li>
+            <li class="nav-item"><a href="sams-corner.html" class="nav-link">Sam's Corner</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="page-background">
+        <div class="overlay"></div>
+        
+        <div class="content-container">
+            <h1 class="pulsing-text">Episode Scripts</h1>
+            
+            <!-- Scripts Wheel -->
+            <div class="wheel-container">
+                <!-- Previous Episode (Initially hidden) -->
+                <div class="wheel-item previous">
+                    <div class="wheel-box inactive">
+                        <h3>Episode 10</h3>
+                        <p class="episode-title" style="color: #FFC107; font-style: italic;">"The Big Shoe..."</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep10.pdf" class="btn btn-green" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep10.pdf" class="btn btn-blue" target="_blank">
+                                <i class="fas fa-eye"></i> View PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Current Episode -->
+                <div class="wheel-item current">
+                    <div class="wheel-box active">
+                        <h3>Episode 1</h3>
+                        <p class="episode-title" style="color: #FFC107; font-style: italic;">"Leap of Faith"</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep1.pdf" class="btn btn-green" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep1.pdf" class="btn btn-blue" target="_blank">
+                                <i class="fas fa-eye"></i> View PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Next Episode -->
+                <div class="wheel-item next">
+                    <div class="wheel-box inactive">
+                        <h3>Episode 2</h3>
+                        <p class="episode-title" style="color: #FFC107; font-style: italic;">"Night Moves"</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep2.pdf" class="btn btn-green" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep2.pdf" class="btn btn-blue" target="_blank">
+                                <i class="fas fa-eye"></i> View PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wheel Controls -->
+            <div class="wheel-controls">
+                <button id="wheel-up" class="wheel-btn">
+                    <i class="fas fa-chevron-up" style="color: white; font-size: 1.5rem;"></i>
+                </button>
+                <button id="wheel-down" class="wheel-btn">
+                    <i class="fas fa-chevron-down" style="color: white; font-size: 1.5rem;"></i>
+                </button>
+            </div>
+            
+            <!-- Hidden Data for All Episodes -->
+            <div style="display: none;">
+                <!-- Episode 1 -->
+                <div class="wheel-data-item">
+                    <div class="wheel-box">
+                        <h3>Episode 1</h3>
+                        <p class="episode-title" style="color: #FFC107; font-style: italic;">"Leap of Faith"</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep1.pdf" class="btn btn-green" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep1.pdf" class="btn btn-blue" target="_blank">
+                                <i class="fas fa-eye"></i> View PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Episode 2 -->
+                <div class="wheel-data-item">
+                    <div class="wheel-box">
+                        <h3>Episode 2</h3>
+                        <p class="episode-title" style="color: #FFC107; font-style: italic;">"Night Moves"</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep2.pdf" class="btn btn-green" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep2.pdf" class="btn btn-blue" target="_blank">
+                                <i class="fas fa-eye"></i> View PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Episode 3 -->
+                <div class="wheel-data-item">
+                    <div class="wheel-box">
+                        <h3>Episode 3</h3>
+                        <p class="episode-title" style="color: #FFC107; font-style: italic;">"Two out of Three Ain't Bad"</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep3.pdf" class="btn btn-green" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep3.pdf" class="btn btn-blue" target="_blank">
+                                <i class="fas fa-eye"></i> View PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Episode 4 -->
+                <div class="wheel-data-item">
+                    <div class="wheel-box">
+                        <h3>Episode 4</h3>
+                        <p class="episode-title" style="color: #FFC107; font-style: italic;">"Last Laugh"</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep4.pdf" class="btn btn-green" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep4.pdf" class="btn btn-blue" target="_blank">
+                                <i class="fas fa-eye"></i> View PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Episode 5 -->
+                <div class="wheel-data-item">
+                    <div class="wheel-box">
+                        <h3>Episode 5</h3>
+                        <p class="episode-title" style="color: #FFC107; font-style: italic;">"Digital Inheritance"</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep5.pdf" class="btn btn-green" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep5.pdf" class="btn btn-blue" target="_blank">
+                                <i class="fas fa-eye"></i> View PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Episode 6 -->
+                <div class="wheel-data-item">
+                    <div class="wheel-box">
+                        <h3>Episode 6</h3>
+                        <p class="episode-title" style="color: #FFC107; font-style: italic;">"Missing"</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep6.pdf" class="btn btn-green" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep6.pdf" class="btn btn-blue" target="_blank">
+                                <i class="fas fa-eye"></i> View PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Episode 7 -->
+                <div class="wheel-data-item">
+                    <div class="wheel-box">
+                        <h3>Episode 7</h3>
+                        <p class="episode-title" style="color: #FFC107; font-style: italic;">"Command Performance"</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep7.pdf" class="btn btn-green" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                            <a href="scripts/Living_with_the_Ghost_of_Sam_Ep7.pdf" class="btn btn-blue" target="_blank">
+                                <i class="fas fa-eye"></i> View PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Episode 8 -->
+                <div class="wheel-data-item">
+                    <div
