@@ -1,5 +1,60 @@
-// Add this to your navigation.js or a new script
+// navigation.js - Complete file for the Living with the Ghost of Sam v3 website
+
 document.addEventListener('DOMContentLoaded', function() {
+    // ===== WHEEL NAVIGATION =====
+    // Get wheel elements
+    const wheelUpBtn = document.getElementById('wheel-up');
+    const wheelDownBtn = document.getElementById('wheel-down');
+    const wheelContainer = document.querySelector('.wheel-container');
+    const wheelDataItems = document.querySelectorAll('.wheel-data-item');
+    
+    // Set initial state
+    let currentIndex = 0;
+    let totalEpisodes = wheelDataItems.length;
+    
+    // Setup wheel navigation
+    wheelUpBtn.addEventListener('click', moveUp);
+    wheelDownBtn.addEventListener('click', moveDown);
+    
+    function moveUp() {
+        currentIndex = currentIndex === 0 ? totalEpisodes - 1 : currentIndex - 1;
+        updateWheel();
+    }
+    
+    function moveDown() {
+        currentIndex = currentIndex === totalEpisodes - 1 ? 0 : currentIndex + 1;
+        updateWheel();
+    }
+    
+    function updateWheel() {
+        const prevIndex = currentIndex === 0 ? totalEpisodes - 1 : currentIndex - 1;
+        const nextIndex = currentIndex === totalEpisodes - 1 ? 0 : currentIndex + 1;
+        
+        // Update the wheel display
+        const previousItem = wheelContainer.querySelector('.wheel-item.previous');
+        const currentItem = wheelContainer.querySelector('.wheel-item.current');
+        const nextItem = wheelContainer.querySelector('.wheel-item.next');
+        
+        // Update content from data items
+        previousItem.innerHTML = wheelDataItems[prevIndex].innerHTML;
+        currentItem.innerHTML = wheelDataItems[currentIndex].innerHTML;
+        nextItem.innerHTML = wheelDataItems[nextIndex].innerHTML;
+        
+        // Ensure active/inactive states
+        previousItem.querySelector('.wheel-box').classList.add('inactive');
+        previousItem.querySelector('.wheel-box').classList.remove('active');
+        currentItem.querySelector('.wheel-box').classList.add('active');
+        currentItem.querySelector('.wheel-box').classList.remove('inactive');
+        nextItem.querySelector('.wheel-box').classList.add('inactive');
+        nextItem.querySelector('.wheel-box').classList.remove('active');
+    }
+    
+    // Initialize the wheel
+    if (wheelDataItems.length > 0) {
+        updateWheel();
+    }
+    
+    // ===== FLOATING SAM IMAGE =====
     // Create the floating image element
     const imageBox = document.createElement('div');
     imageBox.id = 'image-box';
@@ -46,4 +101,11 @@ document.addEventListener('DOMContentLoaded', function() {
     moveImageBox();
     setInterval(moveImageBox, 3000);
     window.addEventListener('resize', moveImageBox);
+    
+    // ===== SET CURRENT YEAR IN FOOTER =====
+    // This is from your original code
+    const currentYearElement = document.getElementById('current-year');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
 });
