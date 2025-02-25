@@ -143,14 +143,15 @@
             }
             
             // Password authentication
-            function authenticateUser() {
-                if(document.getElementById("password").value === "Terguson") {
-                    sessionStorage.setItem("authenticated", "true");
-                    showMainContent();
-                } else {
-                    document.getElementById("error-message").textContent = "Incorrect password";
-                }
-            }
+function authenticateUser() {
+    if(document.getElementById("password").value === "Terguson") {
+        sessionStorage.setItem("authenticated", "true");
+        // Change this line to point to your v3 version of the selection page
+        window.location.href = "selection.html"; // Just use the relative path
+    } else {
+        document.getElementById("error-message").textContent = "Incorrect password";
+    }
+}
             
             // Show main content after authentication
             function showMainContent() {
