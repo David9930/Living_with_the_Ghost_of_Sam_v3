@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // ===== WHEEL NAVIGATION =====
+    // === spacer ====
     // Get wheel elements
     const wheelUpBtn = document.getElementById('wheel-up');
     const wheelDownBtn = document.getElementById('wheel-down');
