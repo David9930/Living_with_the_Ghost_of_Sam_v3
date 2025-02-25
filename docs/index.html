@@ -3,25 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Living with the Ghost of Sam</title>
-    <meta name="description" content="Living with the Ghost of Sam - A supernatural comedy series">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Add font awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Login | Living with the Ghost of Sam</title>
     <style>
-        /* Login overlay styles */
-        .splash-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        body {
+            font-family: system-ui, sans-serif;
             background: #13151a;
+            color: white;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
-            overflow: hidden;
+            min-height: 100vh;
         }
         
         .login-box {
@@ -29,58 +22,31 @@
             padding: 2rem;
             border-radius: 8px;
             text-align: center;
-            color: #fff;
-            z-index: 1001;
-            position: relative;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .password-input {
-            margin: 1rem 0;
+            margin: 1.5rem 0;
         }
         
         .password-input label {
             display: block;
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
         
         .password-input input {
-            padding: 0.5rem;
+            padding: 0.75rem;
             border-radius: 4px;
             border: none;
             width: 100%;
+            font-size: 1rem;
             color: #000;
+            box-sizing: border-box;
         }
         
-        .error {
-            color: red;
-            margin-top: 1rem;
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        /* Floating Sam image */
-        #image-box {
-            position: fixed;
-            width: 300px;
-            height: 200px;
-            transition: transform 0.5s ease-in-out;
-            background: transparent;
-            pointer-events: none;
-            z-index: 0;
-            top: 0;
-            left: 0;
-        }
-        
-        #sam-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            opacity: 0.3;
-        }
-
         .btn {
             display: inline-block;
             color: #fff;
@@ -90,83 +56,102 @@
             border: none;
             cursor: pointer;
             font-size: 1rem;
-            transition: background 0.2s;
             background: #2196f3;
+            transition: background 0.2s;
         }
         
         .btn:hover {
             background: #1976d2;
         }
+        
+        .error {
+            color: #ff5252;
+            margin-top: 1rem;
+        }
+        
+        #image-box {
+            position: fixed;
+            width: 300px;
+            height: 200px;
+            transition: transform 0.5s ease-in-out;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        #sam-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
     </style>
 </head>
 <body>
-    <!-- Login Screen -->
-    <div id="splash" class="splash-container">
-        <div class="login-box">
-            <h1>Welcome</h1>
-            <div class="password-input">
-                <label for="password">Professor Who ?</label>
-                <input type="password" id="password">
-            </div>
-            <button id="submit-btn" class="btn">Enter</button>
-            <p id="error-message" class="error"></p>
-        </div>
-        <div id="image-box">
-            <img src="images/SamImagesmall.jpg" id="sam-image" alt="Sam">
-        </div>
+    <!-- Sam's floating image -->
+    <div id="image-box">
+        <img id="sam-image" src="https://david9930.github.io/living-with-the-ghost-of-sam/images/SamImagesmall.jpg" alt="Sam">
     </div>
     
-    <!-- Scripts -->
+    <!-- Login box -->
+    <div class="login-box">
+        <h1>Welcome</h1>
+        <div class="password-input">
+            <label for="password">Professor Who?</label>
+            <input type="password" id="password" autocomplete="off">
+        </div>
+        <button id="submit-btn" class="btn">Enter</button>
+        <p id="error-message" class="error"></p>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Check if already authenticated
-            if(sessionStorage.getItem("authenticated")) {
-                // We're already authenticated, so redirect to the selection page
-                window.location.href = "/living-with-the-ghost-of-sam_v3/selection.html";
+            if (sessionStorage.getItem("authenticated")) {
+                // Redirect immediately if authenticated
+                window.location.href = "https://david9930.github.io/living-with-the-ghost-of-sam_v3/selection.html";
+                return;
             }
             
-            // Password authentication
-            function authenticateUser() {
-                if (document.getElementById("password").value === "Terguson") {
+            // Handle password submission
+            function checkPassword() {
+                const password = document.getElementById("password").value;
+                
+                if (password === "Terguson") {
+                    // Set authenticated flag
                     sessionStorage.setItem("authenticated", "true");
-                    window.location.href = "/living-with-the-ghost-of-sam_v3/selection.html";
+                    
+                    // Redirect to v3 site
+                    window.location.href = "https://david9930.github.io/living-with-the-ghost-of-sam_v3/selection.html";
                 } else {
                     document.getElementById("error-message").textContent = "Incorrect password";
                 }
             }
             
-            // Add event listeners for password
-            document.getElementById("submit-btn").addEventListener("click", authenticateUser);
+            // Event listeners
+            document.getElementById("submit-btn").addEventListener("click", checkPassword);
             document.getElementById("password").addEventListener("keypress", function(e) {
-                if(e.key === "Enter") {
-                    authenticateUser();
+                if (e.key === "Enter") {
+                    checkPassword();
                 }
             });
             
-            // Setup floating Sam image
+            // Sam's floating image
             const imageBox = document.getElementById('image-box');
-            const samImage = document.getElementById('sam-image');
             
-            function randomPosition() {
-                const viewportWidth = Math.max(window.innerWidth, 320);
-                const viewportHeight = Math.max(window.innerHeight, 240);
-                const boxWidth = 300;
-                const boxHeight = 200;
-                const maxX = viewportWidth - boxWidth;
-                const maxY = viewportHeight - boxHeight;
-                const x = Math.max(0, Math.min(Math.floor(Math.random() * maxX), maxX));
-                const y = Math.max(0, Math.min(Math.floor(Math.random() * maxY), maxY));
-                return { x, y };
-            }
-            
-            function moveImageBox() {
-                const { x, y } = randomPosition();
+            function moveRandomly() {
+                const maxX = window.innerWidth - 300;
+                const maxY = window.innerHeight - 200;
+                const x = Math.floor(Math.random() * maxX);
+                const y = Math.floor(Math.random() * maxY);
+                
                 imageBox.style.transform = `translate(${x}px, ${y}px)`;
             }
             
-            moveImageBox();
-            setInterval(moveImageBox, 3000);
-            window.addEventListener('resize', moveImageBox);
+            // Initial position
+            moveRandomly();
+            
+            // Move every 3 seconds
+            setInterval(moveRandomly, 3000);
         });
     </script>
 </body>
