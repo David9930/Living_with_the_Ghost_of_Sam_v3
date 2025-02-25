@@ -80,6 +80,23 @@
             display: block;
             opacity: 0.3;
         }
+
+        .btn {
+            display: inline-block;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+            background: #2196f3;
+        }
+        
+        .btn:hover {
+            background: #1976d2;
+        }
     </style>
 </head>
 <body>
@@ -99,84 +116,23 @@
         </div>
     </div>
     
-    <!-- Navigation -->
-    <nav class="nav-container hidden" id="main-content">
-        <ul class="nav-menu">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="scripts.html" class="nav-link">Scripts</a></li>
-            <li class="nav-item"><a href="character-bible.html" class="nav-link">Character Bible</a></li>
-            <li class="nav-item"><a href="about-writer.html" class="nav-link">About the Writer</a></li>
-            <li class="nav-item"><a href="sams-corner.html" class="nav-link">Sam's Corner</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <!-- Main Content -->
-    <main class="page-background hidden" id="main-content-body">
-        <div class="overlay"></div>
-        
-        <div class="content-container">
-            <h1 class="pulsing-text">I am a .......</h1>
-            
-            <div class="role-selection">
-                <a href="roles/professional-agent.html" class="btn role-btn">Professional Agent</a>
-                <a href="roles/agency.html" class="btn role-btn">Agency</a>
-                <a href="roles/streaming-service.html" class="btn role-btn">Netflix-Amazon Prime-Disney+ or other</a>
-                <a href="roles/actor.html" class="btn role-btn">Actor Looking for a Script</a>
-                <a href="roles/producer.html" class="btn role-btn">Wealthy Producer</a>
-                <a href="index.html" class="btn role-btn">None of the above</a>
-            </div>
-        </div>
-    </main>
-    
-    <!-- Footer -->
-    <footer class="hidden" id="main-footer">
-        <p>&copy; <span id="current-year">2024</span> Living with the Ghost of Sam. All rights reserved.</p>
-    </footer>
-    
     <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Check if already authenticated
             if(sessionStorage.getItem("authenticated")) {
-                showMainContent();
+                // We're already authenticated, so redirect to the selection page
+                window.location.href = "/living-with-the-ghost-of-sam_v3/selection.html";
             }
             
-           // Password authentication
-function authenticateUser() {
-    if (document.getElementById("password").value === "Terguson") {
-        sessionStorage.setItem("authenticated", "true");
-        
-        // Determine the base URL for the site
-        const currentURL = window.location.href;
-        
-        // Check if we're on GitHub Pages or a local environment
-        if (currentURL.includes('github.io') || currentURL.includes('living-with-the-ghost-of-sam')) {
-            // We're on the GitHub Pages site
-            window.location.href = "/living-with-the-ghost-of-sam/v3/selection.html";
-        } else {
-            // We're in a local development environment
-            window.location.href = "selection.html";
-        }
-    } else {
-        document.getElementById("error-message").textContent = "Incorrect password";
-    }
-}
-
-// Add event listeners
-document.getElementById("submit-btn").addEventListener("click", authenticateUser);
-document.getElementById("password").addEventListener("keypress", function(e) {
-    if (e.key === "Enter") {
-        authenticateUser();
-    }
-});
-            
-            // Show main content after authentication
-            function showMainContent() {
-                document.getElementById("splash").classList.add("hidden");
-                document.getElementById("main-content").classList.remove("hidden");
-                document.getElementById("main-content-body").classList.remove("hidden");
-                document.getElementById("main-footer").classList.remove("hidden");
+            // Password authentication
+            function authenticateUser() {
+                if (document.getElementById("password").value === "Terguson") {
+                    sessionStorage.setItem("authenticated", "true");
+                    window.location.href = "/living-with-the-ghost-of-sam_v3/selection.html";
+                } else {
+                    document.getElementById("error-message").textContent = "Incorrect password";
+                }
             }
             
             // Add event listeners for password
@@ -186,9 +142,6 @@ document.getElementById("password").addEventListener("keypress", function(e) {
                     authenticateUser();
                 }
             });
-            
-            // Set current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
             
             // Setup floating Sam image
             const imageBox = document.getElementById('image-box');
