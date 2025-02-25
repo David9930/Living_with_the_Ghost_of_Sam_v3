@@ -142,16 +142,34 @@
                 showMainContent();
             }
             
-            // Password authentication
+           // Password authentication
 function authenticateUser() {
-    if(document.getElementById("password").value === "Terguson") {
+    if (document.getElementById("password").value === "Terguson") {
         sessionStorage.setItem("authenticated", "true");
-        // Change this line to point to your v3 version of the selection page
-        window.location.href = "selection.html"; // Just use the relative path
+        
+        // Determine the base URL for the site
+        const currentURL = window.location.href;
+        
+        // Check if we're on GitHub Pages or a local environment
+        if (currentURL.includes('github.io') || currentURL.includes('living-with-the-ghost-of-sam')) {
+            // We're on the GitHub Pages site
+            window.location.href = "/living-with-the-ghost-of-sam/v3/selection.html";
+        } else {
+            // We're in a local development environment
+            window.location.href = "selection.html";
+        }
     } else {
         document.getElementById("error-message").textContent = "Incorrect password";
     }
 }
+
+// Add event listeners
+document.getElementById("submit-btn").addEventListener("click", authenticateUser);
+document.getElementById("password").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        authenticateUser();
+    }
+});
             
             // Show main content after authentication
             function showMainContent() {
