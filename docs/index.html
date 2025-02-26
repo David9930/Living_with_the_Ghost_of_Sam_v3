@@ -89,7 +89,7 @@
 <body>
     <!-- Sam's floating image -->
     <div id="image-box">
-        <img id="sam-image" src="https://david9930.github.io/living-with-the-ghost-of-sam_v3/images/SamImagesmall.jpg" alt="Sam">
+        <img id="sam-image" src="https://david9930.github.io/Living_with_the_Ghost_of_Sam_v3/images/SamImagesmall.jpg" alt="Sam">
     </div>
     
     <!-- Login box -->
@@ -108,23 +108,24 @@
             // Check if already authenticated
             if (sessionStorage.getItem("authenticated")) {
                 // Redirect immediately if authenticated
-                window.location.href = "https://david9930.github.io/Living-with-the-Ghost-of-Sam_v3/docs/selection.html";
+                window.location.href = "https://david9930.github.io/Living_with_the_Ghost_of_Sam_v3/docs/selection.html";
                 return;
             }
             
-           function checkPassword() {
-    const password = document.getElementById("password").value;
-    
-    if (password === "Terguson") {
-        // Set authenticated flag
-        sessionStorage.setItem("authenticated", "true");
-        
-        // Correct redirect URL (without the /docs/ segment)
-        window.location.href = "https://david9930.github.io/Living-with-the-Ghost-of-Sam_v3/selection.html";
-    } else {
-        document.getElementById("error-message").textContent = "Incorrect password";
-    }
-}
+            function checkPassword() {
+                const password = document.getElementById("password").value;
+                
+                if (password === "Terguson") {
+                    // Set authenticated flag
+                    sessionStorage.setItem("authenticated", "true");
+                    
+                    // Correct redirect URL
+                    window.location.href = "https://david9930.github.io/Living_with_the_Ghost_of_Sam_v3/docs/selection.html";
+                } else {
+                    document.getElementById("error-message").textContent = "Incorrect password";
+                }
+            }
+
             // Event listeners
             document.getElementById("submit-btn").addEventListener("click", checkPassword);
             document.getElementById("password").addEventListener("keypress", function(e) {
