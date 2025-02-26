@@ -112,20 +112,48 @@
                 return;
             }
             
-            // Handle password submission
             function checkPassword() {
-                const password = document.getElementById("password").value;
+    const password = document.getElementById("password").value;
+    
+    if (password === "Terguson") {
+        // Set authenticated flag
+        sessionStorage.setItem("authenticated", "true");
+        
+        // Log to console for debugging
+        console.log("Authentication successful, attempting redirect...");
+        
+        try {
+            // Try multiple redirection methods
+            
+            // Method 1: Using window.location.href (most common)
+            window.location.href = "https://david9930.github.io/Living-with-the-Ghost-of-Sam_v3/docs/selection.html";
+            
+            // Method 2: Using window.location.replace (fallback - only runs if Method 1 fails)
+            setTimeout(function() {
+                console.log("First redirect method failed, trying alternative...");
+                window.location.replace("https://david9930.github.io/Living-with-the-Ghost-of-Sam_v3/docs/selection.html");
                 
-                if (password === "Terguson") {
-                    // Set authenticated flag
-                    sessionStorage.setItem("authenticated", "true");
+                // Method 3: Try lowercase version (GitHub Pages can be case-sensitive)
+                setTimeout(function() {
+                    console.log("Second redirect method failed, trying lowercase URL...");
+                    window.location.href = "https://david9930.github.io/living-with-the-ghost-of-sam_v3/docs/selection.html";
                     
-                    // Redirect to v3 site
-                    window.location.href = "https://david9930.github.io/Living-with-the-Ghost-of-Sam_v3/docs/selection.html";
-                } else {
-                    document.getElementById("error-message").textContent = "Incorrect password";
-                }
-            }
+                    // Show manual fallback after all automatic attempts fail
+                    setTimeout(function() {
+                        document.getElementById("error-message").innerHTML = 
+                            "Automatic redirect failed. <a href='https://david9930.github.io/Living-with-the-Ghost-of-Sam_v3/docs/selection.html' style='color: white;'>Click here</a> to continue.";
+                    }, 1000);
+                }, 1000);
+            }, 1000);
+        } catch (e) {
+            console.error("Redirect error:", e);
+            document.getElementById("error-message").innerHTML = 
+                "Redirect error. <a href='https://david9930.github.io/Living-with-the-Ghost-of-Sam_v3/docs/selection.html' style='color: white;'>Click here</a> to continue.";
+        }
+    } else {
+        document.getElementById("error-message").textContent = "Incorrect password";
+    }
+}
             
             // Event listeners
             document.getElementById("submit-btn").addEventListener("click", checkPassword);
